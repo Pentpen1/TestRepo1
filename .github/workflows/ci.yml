@@ -1,0 +1,14 @@
+name: CI (smoke)
+
+on:
+  push:
+    branches: [ "**" ]
+  pull_request:
+  workflow_dispatch:  # lets you click "Run workflow" in the UI
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Hello from Actions at $(date)"
